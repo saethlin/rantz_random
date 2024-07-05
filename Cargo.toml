@@ -12,11 +12,4 @@ categories = ["game-engines"]
 description = "Mostly just a wrapper around fastrand for a bunch of types. Supports bevy and rantz_spatial2d."
 
 [dependencies]
-fastrand = "2.1.0"
-rantz_spatial2d = { version = "2.0.0", optional = true }
-bevy = { version = "0.14.0", default-features = false, optional = true }
-
-[features]
-default = ["spatial2d", "bevy"]
-spatial2d = ["rantz_spatial2d"]
-bevy = ["bevy/bevy_render"]
+fastrand = { version = "2.1.0" }
