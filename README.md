@@ -1,6 +1,6 @@
 Run this a few times:
 ```
-cargo clean && RUSTFLAGS="-Copt-level=2 -Zthreads=0" CARGO_INCREMENTAL=0 cargo +nightly b
+cargo clean && RUSTFLAGS="-Copt-level=2 -Zthreads=0" CARGO_INCREMENTAL=1 cargo +nightly b
 ```
 That should produce this ICE:
 ```
