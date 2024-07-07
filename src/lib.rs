@@ -1,7 +1,7 @@
 pub fn random() {
-    fastrand::bool()
+    fastrand::bool();
 }
 
-pub fn seed() {
+pub fn other() {
     fastrand::seed();
 }

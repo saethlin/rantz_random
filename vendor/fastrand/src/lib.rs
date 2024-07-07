@@ -1,13 +1,7 @@
-struct LocalKey {
-    inner: fn(),
-}
-
-const RNG: LocalKey = LocalKey { inner: || {} };
-
-fn with(key: &LocalKey, f: impl FnOnce()) {}
+const RNG: fn() = || {};
 
 fn with_rng() {
-    with(&RNG, || {})
+    let _x = &RNG;
 }
 
 pub fn seed() {
@@ -15,5 +9,5 @@ pub fn seed() {
 }
 
 pub fn bool() {
-    with_rng()
+    with_rng();
 }
