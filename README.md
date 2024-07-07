@@ -1,6 +1,6 @@
 Run this a few times:
 ```
-touch src/lib.rs && RUSTFLAGS="-Copt-level=2 -Zthreads=0" CARGO_INCREMENTAL=1 cargo +nightly b
+touch src/lib.rs && RUSTFLAGS="-Zthreads=0 -Zmir-enable-passes=+GVN,+Inline -Zmir-opt-level=1" cargo build
 ```
 That should produce this ICE:
 ```
