@@ -1,12 +1,19 @@
-std::thread_local! {
-    static RNG: () = ();
+struct LocalKey {
+    inner: fn(),
 }
 
-#[inline]
+impl LocalKey {
+    fn with(&self, f: impl FnOnce()) {}
+}
+
+const RNG: LocalKey = {
+    LocalKey {
+        inner: || {},
+    }
+};
+
 fn with_rng(f: impl FnOnce()) {
-    RNG.with(|_| {
-        f()
-    })
+    RNG.with(|| f())
 }
 
 #[inline]
